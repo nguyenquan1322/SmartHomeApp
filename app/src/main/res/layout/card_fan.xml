@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/CardStyle">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fan_title"
+            style="@style/TitleText" />
+
+        <!-- Mode Selector -->
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleFanMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+
+            <Button
+                android:id="@+id/btnFanAuto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mode_auto"
+                style="@style/SegmentedButtonStyle"
+                android:textSize="11sp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnFanManual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mode_manual"
+                style="@style/SegmentedButtonStyle"
+                android:textSize="11sp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <!-- Auto Mode Panel -->
+        <TextView
+            android:id="@+id/fanAutoPane"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fan_auto_desc"
+            style="@style/MutedText"
+            android:layout_marginTop="8dp" />
+
+        <!-- Manual Mode Panel -->
+        <LinearLayout
+            android:id="@+id/fanManualPane"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/fan_status"
+                android:textColor="@color/ink"
+                android:textSize="15sp" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchFan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:thumbTint="@color/switch_thumb"
+                app:trackTint="@color/switch_off" />
+        </LinearLayout>
+
+        <!-- Current Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trạng thái hiện tại:"
+                style="@style/MutedText" />
+
+            <TextView
+                android:id="@+id/tvFanStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TẮT"
+                android:textColor="@color/ink"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+

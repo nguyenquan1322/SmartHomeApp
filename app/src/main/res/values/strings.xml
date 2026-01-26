@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Smarthome IoT</string>
+
+    <!-- Header -->
+    <string name="title_dashboard">Smarthome IoT Dashboard</string>
+    <string name="subtitle_dashboard">Giám sát &amp; điều khiển thời gian thực</string>
+
+    <!-- Day/Night -->
+    <string name="day_morning">Sáng</string>
+    <string name="day_evening">Tối</string>
+    <string name="lux_unit">lux</string>
+
+    <!-- Fire Alert -->
+    <string name="fire_alert_label">Cảnh báo cháy:</string>
+    <string name="fire_normal">Bình thường</string>
+    <string name="fire_detected">CÓ CHÁY</string>
+    <string name="fire_safe">An toàn</string>
+
+    <!-- Environment -->
+    <string name="env_title">Môi trường</string>
+    <string name="temp_unit">°C</string>
+    <string name="humidity_unit">%RH</string>
+    <string name="env_evaluation">Đánh giá:</string>
+
+    <!-- Lights -->
+    <string name="lights_title">Đèn (2 cái)</string>
+    <string name="mode_auto">Tự động</string>
+    <string name="mode_manual">Thủ công</string>
+    <string name="lights_auto_desc">Đèn tự động dựa vào cảm biến ánh sáng:\nlux &lt; %d ⇒ bật đèn.</string>
+    <string name="lights_threshold_label">Ngưỡng Lux</string>
+    <string name="light_1">Đèn 1</string>
+    <string name="light_2">Đèn 2</string>
+
+    <!-- Rack -->
+    <string name="rack_title">Giàn phơi quần áo</string>
+    <string name="rack_auto_desc">Mưa ⇒ Đóng giàn phơi. Không mưa ⇒ Mở giàn phơi.\nTrạng thái mưa: %s</string>
+    <string name="rack_status_label">Trạng thái hiện tại:</string>
+    <string name="rack_open">ĐANG MỞ</string>
+    <string name="rack_closed">ĐANG ĐÓNG</string>
+    <string name="btn_open">Mở</string>
+    <string name="btn_close">Đóng</string>
+    <string name="rain_yes">Có mưa</string>
+    <string name="rain_no">Không mưa</string>
+
+    <!-- Fan -->
+    <string name="fan_title">Quạt</string>
+    <string name="fan_auto_desc">Chế độ tự động: Có sự cố cháy ⇒ BẬT quạt;\nbình thường ⇒ TẮT.</string>
+    <string name="fan_status">Trạng thái</string>
+
+    <!-- Door -->
+    <string name="door_title">Cửa</string>
+    <string name="door_status_label">Trạng thái hiện tại:</string>
+    <string name="door_open">ĐANG MỞ</string>
+    <string name="door_closed">ĐANG ĐÓNG</string>
+
+    <!-- Rain Alert -->
+    <string name="rain_title">Cảnh báo mưa</string>
+    <string name="rain_raining">Đang mưa</string>
+    <string name="rain_not_raining">Không mưa</string>
+
+    <!-- Flame Sensor -->
+    <string name="flame_title">Cảnh báo cháy (Flame 0/1)</string>
+    <string name="flame_sensor_value">Giá trị cảm biến:</string>
+    <string name="flame_detected_label">Phát hiện lửa:</string>
+    <string name="flame_yes">Có</string>
+    <string name="flame_no">Không</string>
+    <string name="flame_condition">Điều kiện kích hoạt: flame == 1 ⇒ cảnh báo cháy.</string>
+
+    <!-- Common -->
+    <string name="loading">Đang tải…</string>
+    <string name="error_connection">Lỗi kết nối Firebase</string>
+    <string name="retry">Thử lại</string>
+</resources>
+

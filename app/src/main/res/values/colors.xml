@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Theme Colors - matching Web Dashboard -->
+    <color name="bg">#0A0F1F</color>
+    <color name="bg_2">#0E1630</color>
+    <color name="card">#121936</color>
+    <color name="card_gradient_start">#141E42</color>
+    <color name="card_gradient_end">#0E1532</color>
+
+    <color name="ink">#EAF0FF</color>
+    <color name="muted">#96A1BB</color>
+
+    <color name="accent">#6AA2FF</color>
+    <color name="accent_2">#7AD3FF</color>
+    <color name="danger">#FF4D6D</color>
+    <color name="ok">#00C389</color>
+
+    <color name="border">#1AFFFFFF</color>
+    <color name="border_light">#40FFFFFF</color>
+
+    <!-- Component Colors -->
+    <color name="switch_off">#2B355F</color>
+    <color name="switch_on">#2A6CFF</color>
+    <color name="switch_thumb">#FFFFFF</color>
+
+    <color name="button_bg">#0F1533</color>
+    <color name="button_hover">#16204A</color>
+
+    <color name="pill_bg">#0F1738</color>
+    <color name="pill_ok_border">#4000C389</color>
+    <color name="pill_danger_bg">#2A1120</color>
+    <color name="pill_danger_border">#66FF4D6D</color>
+
+    <!-- Status Bar & Navigation -->
+    <color name="status_bar">#0A0F1F</color>
+
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
+    <color name="shadow">#48000000</color>
+</resources>
+
