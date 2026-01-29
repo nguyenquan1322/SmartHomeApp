@@ -82,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
     private CardView cvRainTag;
     private TextView tvRainTag;
 
+    // Gas Card
+    private TextView tvGasValue, tvGasStatus, tvGasWarning;
+
     // State
     private SensorData currentSensor = new SensorData();
     private DeviceState currentDevice = new DeviceState();
@@ -164,6 +167,11 @@ public class MainActivity extends AppCompatActivity {
         // Rain
         cvRainTag = findViewById(R.id.cvRainTag);
         tvRainTag = findViewById(R.id.tvRainTag);
+
+        // Gas
+        tvGasValue = findViewById(R.id.tvGasValue);
+        tvGasStatus = findViewById(R.id.tvGasStatus);
+        tvGasWarning = findViewById(R.id.tvGasWarning);
     }
 
     private void setupListeners() {
@@ -363,6 +371,14 @@ public class MainActivity extends AppCompatActivity {
         tvRainTag.setText(isRain ? getString(R.string.rain_raining) : getString(R.string.rain_not_raining));
         int rainColor = isRain ? R.color.pill_danger_bg : R.color.pill_bg;
         cvRainTag.setCardBackgroundColor(ContextCompat.getColor(this, rainColor));
+
+        // Gas Status
+        float gasValue = currentSensor.getGas();
+        tvGasValue.setText(String.format(Locale.US, "%.0f", gasValue));
+        boolean isGasDanger = currentSensor.isGasDanger();
+        tvGasStatus.setText(isGasDanger ? getString(R.string.gas_danger) : getString(R.string.gas_safe));
+        tvGasStatus.setTextColor(ContextCompat.getColor(this, isGasDanger ? R.color.danger : R.color.ink));
+        tvGasWarning.setVisibility(isGasDanger ? View.VISIBLE : View.GONE);
 
         // Update rack auto description
         String rainStatus = isRain ? getString(R.string.rain_yes) : getString(R.string.rain_no);

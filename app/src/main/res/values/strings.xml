@@ -66,6 +66,14 @@
     <string name="flame_no">Không</string>
     <string name="flame_condition">Điều kiện kích hoạt: flame == 1 ⇒ cảnh báo cháy.</string>
 
+    <!-- Gas Sensor -->
+    <string name="gas_title">Khí Gas</string>
+    <string name="gas_level_label">Nồng độ:</string>
+    <string name="gas_status_label">Trạng thái:</string>
+    <string name="gas_safe">An toàn</string>
+    <string name="gas_warning">⚠️ CẢNH BÁO: Nồng độ khí gas vượt ngưỡng an toàn!</string>
+    <string name="gas_danger">NGUY HIỂM</string>
+
     <!-- Common -->
     <string name="loading">Đang tải…</string>
     <string name="error_connection">Lỗi kết nối Firebase</string>
