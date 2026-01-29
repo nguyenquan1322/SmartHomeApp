@@ -84,5 +84,13 @@
         <item name="cardElevation">4dp</item>
         <item name="contentPadding">10dp</item>
     </style>
+
+    <!-- Switch Style with Gradient -->
+    <style name="CustomSwitchStyle" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="track">@drawable/switch_track</item>
+        <item name="thumbTint">@null</item>
+        <item name="trackTint">@null</item>
+        <item name="android:thumb">@drawable/switch_thumb</item>
+    </style>
 </resources>
 
