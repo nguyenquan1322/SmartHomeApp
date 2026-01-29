@@ -420,8 +420,16 @@ public class MainActivity extends AppCompatActivity {
             switchLight2.setChecked(currentDevice.getLight().isLight2On());
         }
 
-        // Rack
-        tvRackStatus.setText(currentDevice.isRackOpen() ?
+        // Rack - hiển thị theo mode
+        boolean isRackOpen;
+        if (currentMode.isRackAuto()) {
+            // Auto mode: hiển thị theo rain sensor (mưa = đóng, không mưa = mở)
+            isRackOpen = !currentSensor.isRaining();
+        } else {
+            // Manual mode: hiển thị theo Firebase device state
+            isRackOpen = currentDevice.isRackOpen();
+        }
+        tvRackStatus.setText(isRackOpen ?
                 getString(R.string.rack_open) : getString(R.string.rack_closed));
 
         // Fan

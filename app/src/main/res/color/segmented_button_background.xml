@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Checked: Nền trắng/xanh rất nhạt - dễ nhìn -->
+    <item android:state_checked="true" android:color="#E8F0FE" />
+    <!-- Unchecked: Nền tối -->
+    <item android:color="#1E2A47" />
+</selector>
+

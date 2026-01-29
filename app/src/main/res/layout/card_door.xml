@@ -33,29 +33,24 @@
                 app:trackTint="@color/switch_off" />
         </LinearLayout>
 
-        <!-- Status -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Status Label -->
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp">
+            android:text="@string/door_status_label"
+            style="@style/MutedText"
+            android:layout_marginTop="12dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/door_status_label"
-                style="@style/MutedText" />
-
-            <TextView
-                android:id="@+id/tvDoorStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/door_closed"
-                android:textColor="@color/ink"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_marginStart="4dp" />
-        </LinearLayout>
+        <!-- Status Value (xuống dòng) -->
+        <TextView
+            android:id="@+id/tvDoorStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/door_closed"
+            android:textColor="@color/ink"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp" />
 
     </LinearLayout>
 
