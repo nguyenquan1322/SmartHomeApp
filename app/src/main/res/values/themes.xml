@@ -92,5 +92,19 @@
         <item name="trackTint">@null</item>
         <item name="android:thumb">@drawable/switch_thumb</item>
     </style>
+
+    <!-- Alert Dialog Theme -->
+    <style name="AlertDialogTheme" parent="Theme.Material3.Dark.Dialog.Alert">
+        <item name="android:background">@color/card</item>
+        <item name="colorPrimary">@color/danger</item>
+        <item name="android:textColorPrimary">@color/ink</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AlertDialogButtonStyle</item>
+    </style>
+
+    <!-- Alert Dialog Button Style -->
+    <style name="AlertDialogButtonStyle" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/danger</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
 

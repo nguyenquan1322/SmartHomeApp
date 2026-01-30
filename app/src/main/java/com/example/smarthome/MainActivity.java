@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
@@ -95,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
     // Flags to prevent feedback loops
     private boolean isUpdatingUI = false;
+    private boolean isGasAlertShowing = false;
+    private boolean isFireAlertShowing = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -366,6 +369,11 @@ public class MainActivity extends AppCompatActivity {
         tvFlameValue.setText(String.valueOf(currentSensor.getFlame()));
         tvFlameDetected.setText(isFire ? getString(R.string.flame_yes) : getString(R.string.flame_no));
 
+        // Show FIRE alert if detected
+        if (isFire && !isFireAlertShowing) {
+            showFireAlert();
+        }
+
         // Rain Status
         boolean isRain = currentSensor.isRaining();
         tvRainTag.setText(isRain ? getString(R.string.rain_raining) : getString(R.string.rain_not_raining));
@@ -379,6 +387,11 @@ public class MainActivity extends AppCompatActivity {
         tvGasStatus.setText(isGasDanger ? getString(R.string.gas_danger) : getString(R.string.gas_safe));
         tvGasStatus.setTextColor(ContextCompat.getColor(this, isGasDanger ? R.color.danger : R.color.ink));
         tvGasWarning.setVisibility(isGasDanger ? View.VISIBLE : View.GONE);
+
+        // Show GAS alert if danger detected
+        if (isGasDanger && !isGasAlertShowing) {
+            showGasAlert();
+        }
 
         // Update rack auto description
         String rainStatus = isRain ? getString(R.string.rain_yes) : getString(R.string.rain_no);
@@ -519,6 +532,48 @@ public class MainActivity extends AppCompatActivity {
         LineData lineData = new LineData(tempDataSet, humiDataSet);
         chartEnvironment.setData(lineData);
         chartEnvironment.invalidate();
+    }
+
+    private void showGasAlert() {
+        isGasAlertShowing = true;
+
+        new AlertDialog.Builder(this, R.style.AlertDialogTheme)
+                .setTitle("🚨 CẢNH BÁO KHÍ GAS!")
+                .setMessage("⚠️ PHÁT HIỆN KHÍ GAS VƯỢT NGƯỠNG!\n\n" +
+                        "💨 Nồng độ Gas: " + String.format(Locale.US, "%.0f", currentSensor.getGas()) + " ppm\n" +
+                        "⚠️ Ngưỡng an toàn: 70 ppm\n\n" +
+                        "⚡ Hành động ngay:\n" +
+                        "• Tắt nguồn lửa\n" +
+                        "• Mở cửa thông gió\n" +
+                        "• Sơ tán nếu cần thiết")
+                .setPositiveButton("ĐÃ HIỂU", (dialog, which) -> {
+                    isGasAlertShowing = false;
+                    dialog.dismiss();
+                })
+                .setOnDismissListener(dialog -> isGasAlertShowing = false)
+                .setCancelable(false)
+                .show();
+    }
+
+    private void showFireAlert() {
+        isFireAlertShowing = true;
+
+        new AlertDialog.Builder(this, R.style.AlertDialogTheme)
+                .setTitle("🔥 CẢNH BÁO CHÁY!")
+                .setMessage("⚠️ PHÁT HIỆN LỬA TRONG NHÀ!\n\n" +
+                        "🔥 Trạng thái: ĐANG CHÁY\n" +
+                        "🚨 Mức độ: NGUY HIỂM\n\n" +
+                        "⚡ Hành động NGAY:\n" +
+                        "• Báo động mọi người\n" +
+                        "• Sơ tán khỏi khu vực\n" +
+                        "• Gọi cứu hỏa: 114")
+                .setPositiveButton("ĐÃ HIỂU", (dialog, which) -> {
+                    isFireAlertShowing = false;
+                    dialog.dismiss();
+                })
+                .setOnDismissListener(dialog -> isFireAlertShowing = false)
+                .setCancelable(false)
+                .show();
     }
 }
 
