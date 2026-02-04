@@ -541,7 +541,7 @@ public class MainActivity extends AppCompatActivity {
                 .setTitle("🚨 CẢNH BÁO KHÍ GAS!")
                 .setMessage("⚠️ PHÁT HIỆN KHÍ GAS VƯỢT NGƯỠNG!\n\n" +
                         "💨 Nồng độ Gas: " + String.format(Locale.US, "%.0f", currentSensor.getGas()) + " ppm\n" +
-                        "⚠️ Ngưỡng an toàn: 70 ppm\n\n" +
+                        "⚠️ Ngưỡng an toàn: 2048 ppm\n\n" +
                         "⚡ Hành động ngay:\n" +
                         "• Tắt nguồn lửa\n" +
                         "• Mở cửa thông gió\n" +

@@ -44,7 +44,7 @@ public class SensorData {
     // Helper methods
     public boolean isRaining() { return rain == 1; }
     public boolean isFire() { return flame == 1; }
-    public boolean isGasDanger() { return gas > 70; } // Ngưỡng cảnh báo gas > 70
+    public boolean isGasDanger() { return gas > 2048; } // Ngưỡng cảnh báo gas > 70
 
     @Override
     public String toString() {
